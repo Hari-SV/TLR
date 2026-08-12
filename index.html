@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Lost Realm</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Cinzel+Decorative:wght@700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Firebase (compat SDK — simplest to drop into a plain HTML/JS site) -->
+  <script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-firestore-compat.js"></script>
+</head>
+<body>
+
+  <!-- Header / Navigation -->
+  <header class="navbar">
+    <div class="brand">
+      <div class="logo">The Lost Realm</div>
+      <div id="session-bar" class="session-bar" hidden>
+        <span id="session-label" class="session-label"></span>
+      </div>
+    </div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#about">The Lost Realm</a></li>
+        <li><a href="#how-to-play">How to Play</a></li>
+        <li><a href="#account">Account</a></li>
+        <li><a href="stats.html">Leaderboard</a></li>
+      </ul>
+    </nav>
+    <div class="auth-buttons">
+      <a href="report.html" id="support-btn" class="btn-ghost">Report / Feedback</a>
+      <button id="session-logout-btn" class="btn-ghost session-logout" hidden>Log Out</button>
+      <a href="login.html" id="login-btn" class="btn-ghost">Log In</a>
+      <a href="signup.html" id="signup-btn" class="btn-solid">Sign Up</a>
+      <a href="admin-login.html" id="admin-login-btn" class="btn-ghost" title="Admin login">Admin</a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <p class="eyebrow">A realm awaits beyond the gate</p>
+      <h1>The Lost Realm</h1>
+      <p class="hero-tagline">
+        Forge your name in a world of dying kingdoms, ancient pacts,
+        and fires that refuse to go out.
+      </p>
+      <button class="play-btn">
+        <span class="seal-ring"></span>
+        <span class="seal-text">Enter The Realm</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- Ornamental Divider -->
+  <div class="divider" aria-hidden="true">
+    <svg viewBox="0 0 200 24" preserveAspectRatio="xMidYMid meet">
+      <line x1="0" y1="12" x2="80" y2="12" class="divider-line" />
+      <path d="M100 2 L108 12 L100 22 L92 12 Z" class="divider-diamond" />
+      <line x1="120" y1="12" x2="200" y2="12" class="divider-line" />
+    </svg>
+  </div>
+
+  <!-- About Section -->
+  <section id="about" class="about">
+    <div class="section-inner">
+      <p class="eyebrow">The Realm</p>
+      <h2>Discover the truth</h2>
+      <p>
+        Once a familiar stronghold, The realms gate looms over you inviting you in.
+        As the strongest wizard of your time and your fractured memories of ancient 
+        arcane runes will you manage to uncover the realms secrets and regain your
+        memories of the past?
+      </p>
+    </div>
+  </section>
+
+  <!-- Ornamental Divider -->
+  <div class="divider" aria-hidden="true">
+    <svg viewBox="0 0 200 24" preserveAspectRatio="xMidYMid meet">
+      <line x1="0" y1="12" x2="80" y2="12" class="divider-line" />
+      <path d="M100 2 L108 12 L100 22 L92 12 Z" class="divider-diamond" />
+      <line x1="120" y1="12" x2="200" y2="12" class="divider-line" />
+    </svg>
+  </div>
+
+  <!-- How to Play Section -->
+  <section id="how-to-play" class="how-to-play">
+    <div class="section-inner">
+      <p class="eyebrow">How to Play</p>
+      <h2>Raise Your Tome</h2>
+      <div class="scroll-list">
+        <div class="scroll-item">
+          <h3>Create Your Hero</h3>
+          <p>Choose your name and the colors you'll carry into battle.</p>
+        </div>
+        <div class="scroll-item">
+          <h3>Explore the Realm</h3>
+          <p>Traverse through rooms and uncover secrets as you try and piece your memories together.</p>
+        </div>
+        <div class="scroll-item">
+          <h3>Discover The Truth</h3>
+          <p>Inch closer to the purpose of your journey as you progress through the realm.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ornamental Divider -->
+  <div class="divider" aria-hidden="true">
+    <svg viewBox="0 0 200 24" preserveAspectRatio="xMidYMid meet">
+      <line x1="0" y1="12" x2="80" y2="12" class="divider-line" />
+      <path d="M100 2 L108 12 L100 22 L92 12 Z" class="divider-diamond" />
+      <line x1="120" y1="12" x2="200" y2="12" class="divider-line" />
+    </svg>
+  </div>
+
+  <!-- Account / Profile Preview Section -->
+  <section id="account" class="account-preview">
+    <div class="section-inner">
+      <p class="eyebrow"> </p>
+      <h2>Your Banner Awaits</h2>
+      <p>
+        Sign in to view your hero's progress and manage your profile.
+      </p>
+      <button id="account-btn" class="btn-ghost">Go to Account</button>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <p class="footer-brand">The Lost Realm</p>
+      <ul class="footer-links">
+        <li><a href="#about">The Lost Realm</a></li>
+        <li><a href="#how-to-play">How to Play</a></li>
+        <li><a href="#">Support</a></li>
+      </ul>
+      <p class="footer-copy">&copy; 2026 The Lost Realm. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- ==============================
+       Admin Panel (hidden until an admin signs in)
+       ============================== -->
+  <section id="admin-panel" class="admin-panel" hidden>
+    <div class="section-inner admin-panel-inner">
+      <p class="eyebrow">Admin</p>
+      <h2>Bug Reports &amp; Feedback</h2>
+      <div class="admin-controls">
+        <div class="admin-filters">
+          <button class="filter-pill active" data-filter="all">All</button>
+          <button class="filter-pill" data-filter="bug">Bugs</button>
+          <button class="filter-pill" data-filter="feedback">Feedback</button>
+          <button class="filter-pill" data-filter="unread">Unread</button>
+        </div>
+        <button id="admin-logout-btn" class="btn-ghost">Log Out</button>
+      </div>
+      <div id="admin-reports-list" class="admin-reports-list">
+        <p class="admin-empty">Loading reports...</p>
+      </div>
+    </div>
+  </section>
+
+  <script src="firebase-config.js"></script>
+  <script src="session.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

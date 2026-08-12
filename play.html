@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Enter the Realm — The Lost Realm</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Cinzel+Decorative:wght@700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="play.css" />
+
+  <script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-firestore-compat.js"></script>
+</head>
+<body class="play-page">
+
+  <header class="navbar">
+    <div class="brand">
+      <a href="index.html" class="logo">The Lost Realm</a>
+      <div id="session-bar" class="session-bar" hidden>
+        <span id="session-label" class="session-label"></span>
+      </div>
+    </div>
+    <button id="session-logout-btn" class="btn-ghost session-logout" hidden>Log Out</button>
+  </header>
+
+  <main class="portal-main">
+    <div class="portal-frame">
+      <div class="portal-corner portal-corner-tl"></div>
+      <div class="portal-corner portal-corner-tr"></div>
+      <div class="portal-corner portal-corner-bl"></div>
+      <div class="portal-corner portal-corner-br"></div>
+
+      <div id="portal-loading" class="portal-loading">
+        <span class="portal-loading-ring"></span>
+        <p>Opening the gate...</p>
+      </div>
+
+      <iframe
+        id="portal-frame-iframe"
+        class="portal-iframe"
+        src="https://the-lost-realm-web.onrender.com"
+        title="The Lost Realm — Web App"
+        allow="autoplay; fullscreen; gamepad"
+        allowfullscreen
+      ></iframe>
+    </div>
+
+    <p class="portal-fallback">
+      Realm not appearing? <a href="https://the-lost-realm-web.onrender.com" target="_blank" rel="noopener">Open it in a new tab instead</a>.
+    </p>
+  </main>
+
+  <script src="firebase-config.js"></script>
+  <script src="session.js"></script>
+  <script src="play.js"></script>
+</body>
+</html>
