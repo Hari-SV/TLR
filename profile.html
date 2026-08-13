@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Banner — The Lost Realm</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Cinzel+Decorative:wght@700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="profile.css" />
+
+  <script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-firestore-compat.js"></script>
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="brand">
+      <a href="index.html" class="back-link">&larr; Back to Home</a>
+      <a href="index.html" class="logo">The Lost Realm</a>
+      <div id="session-bar" class="session-bar" hidden>
+        <span id="session-label" class="session-label"></span>
+      </div>
+    </div>
+    <button id="session-logout-btn" class="btn-ghost session-logout" hidden>Log Out</button>
+  </header>
+
+  <main class="profile-main">
+    <div id="profile-guest" class="profile-guest" hidden>
+      <p class="eyebrow">Restricted</p>
+      <h1>Sign in to view your banner</h1>
+      <p class="profile-guest-sub">Your profile and stats are only visible to you once signed in.</p>
+      <a href="login.html" class="btn-solid">Log In</a>
+    </div>
+
+    <div id="profile-content" class="profile-content" hidden>
+      <section class="profile-header">
+        <p class="eyebrow">Your Banner</p>
+        <p id="viewing-notice" class="viewing-notice" hidden></p>
+        <h1 id="profile-username">Loading...</h1>
+        <p class="profile-meta" id="profile-meta"></p>
+      </section>
+
+      <section id="admin-bar" class="admin-bar" hidden></section>
+
+      <section class="stat-grid">
+        <div class="stat-card">
+          <span class="stat-label">Fastest Clear</span>
+          <span class="stat-value" id="stat-fastest">--</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-label">Runs Completed</span>
+          <span class="stat-value" id="stat-completed">--</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-label">Total Attempts</span>
+          <span class="stat-value" id="stat-attempts">--</span>
+        </div>
+      </section>
+
+      <section class="achievements-section">
+        <p class="eyebrow">Achievements</p>
+        <h2>Trophies Earned</h2>
+        <div id="achievements-grid" class="achievements-grid"></div>
+      </section>
+    </div>
+
+    <div id="profile-status" class="profile-status">Reading your banner...</div>
+  </main>
+
+  <script src="firebase-config.js"></script>
+  <script src="session.js"></script>
+  <script src="profile.js"></script>
+</body>
+</html>

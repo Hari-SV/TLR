@@ -18,6 +18,7 @@
 
   <header class="navbar">
     <div class="brand">
+      <a href="index.html" class="back-link">&larr; Back to Home</a>
       <a href="index.html" class="logo">The Lost Realm</a>
       <div id="session-bar" class="session-bar" hidden>
         <span id="session-label" class="session-label"></span>
@@ -27,7 +28,17 @@
   </header>
 
   <main class="auth-page">
-    <div class="auth-box">
+    <div id="report-guest" class="auth-box" hidden>
+      <p class="eyebrow">Sign In Required</p>
+      <h1>Log In to Report or Give Feedback</h1>
+      <p class="field-hint" style="margin-bottom: 24px;">
+        This keeps reports tied to an account so we can follow up if needed.
+      </p>
+      <a href="login.html" class="btn-solid">Log In</a>
+      <p class="auth-switch">Need an account? <a href="signup.html">Sign up</a></p>
+    </div>
+
+    <div id="report-content" class="auth-box" hidden>
       <p class="eyebrow">We're Listening</p>
       <h1>Report a Bug or Share Feedback</h1>
 
@@ -44,8 +55,8 @@
         </div>
 
         <div class="form-row">
-          <label for="report-email">Email (optional, so we can follow up)</label>
-          <input type="email" id="report-email" placeholder="you@example.com" />
+          <label for="report-email">Email</label>
+          <input type="email" id="report-email" readonly />
         </div>
 
         <div class="form-row">
@@ -56,8 +67,6 @@
         <button type="submit" class="btn-solid" id="report-submit-btn">Submit</button>
         <p id="support-form-status" class="form-status" role="status"></p>
       </form>
-
-      <p class="auth-switch"><a href="index.html">&larr; Back to home</a></p>
     </div>
   </main>
 

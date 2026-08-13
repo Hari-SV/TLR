@@ -28,6 +28,7 @@
 }
 
 
+
 .stats-table {
   width: 100%;
   border-collapse: separate;
@@ -120,9 +121,7 @@
   box-shadow: 0 0 12px rgba(201, 138, 74, 0.4);
 }
 
-/* ============================================
-   Podium row treatment
-   ============================================ */
+
 
 .rank-row-gold td,
 .rank-row-silver td,

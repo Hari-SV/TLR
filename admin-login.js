@@ -15,8 +15,7 @@ adminLoginForm.addEventListener("submit", async (e) => {
   try {
     const cred = await auth.signInWithEmailAndPassword(email, password);
 
-    // Verify admin status *before* redirecting, so a non-admin account
-    // never lands on index.html looking "signed in as admin".
+    
     const adminDoc = await db.collection("admins").doc(cred.user.uid).get();
 
     if (adminDoc.exists) {

@@ -4,11 +4,6 @@ document.querySelector(".play-btn").addEventListener("click", () => {
   window.location.href = "play.html";
 });
 
-document.getElementById("account-btn").addEventListener("click", () => {
-  alert("Go to Account / Profile page");
-});
-
-
 
 const adminPanel = document.getElementById("admin-panel");
 const adminLoginBtn = document.getElementById("admin-login-btn");
@@ -16,6 +11,7 @@ const adminLoginBtn = document.getElementById("admin-login-btn");
 document.getElementById("admin-logout-btn").addEventListener("click", () => {
   auth.signOut();
 });
+
 
 auth.onAuthStateChanged(async (user) => {
   if (!user) {

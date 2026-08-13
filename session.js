@@ -1,3 +1,5 @@
+
+
 (function () {
   const sessionBar = document.getElementById("session-bar");
   const sessionLabel = document.getElementById("session-label");
@@ -26,7 +28,8 @@
       return;
     }
 
-
+    // Prefer the stored username from Firestore; fall back to
+    // displayName, then email, while that loads.
     let name = user.displayName || user.email;
     sessionLabel.textContent = `Welcome, ${name}`;
     setVisible(sessionBar, true);
@@ -36,6 +39,14 @@
 
     try {
       const doc = await db.collection("users").doc(user.uid).get();
+
+
+      if (doc.exists && doc.data().suspended === true) {
+        await auth.signOut();
+        window.location.href = "suspended.html";
+        return;
+      }
+
       if (doc.exists && doc.data().username) {
         sessionLabel.textContent = `Welcome, ${doc.data().username}`;
       }

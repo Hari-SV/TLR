@@ -1,11 +1,26 @@
+const guestEl = document.getElementById("report-guest");
+const contentEl = document.getElementById("report-content");
 const supportForm = document.getElementById("support-form");
 const supportStatus = document.getElementById("support-form-status");
+
+auth.onAuthStateChanged((user) => {
+  if (!user) {
+    contentEl.hidden = true;
+    guestEl.hidden = false;
+    return;
+  }
+  guestEl.hidden = true;
+  contentEl.hidden = false;
+  document.getElementById("report-email").value = user.email || "";
+});
 
 supportForm.addEventListener("submit", async (e) => {
   e.preventDefault();
 
+  const user = auth.currentUser;
+  if (!user) return; // shouldn't happen since the form is gated, but stay safe
+
   const type = supportForm.querySelector('input[name="report-type"]:checked').value;
-  const email = document.getElementById("report-email").value.trim();
   const message = document.getElementById("report-message").value.trim();
   const submitBtn = document.getElementById("report-submit-btn");
 
@@ -18,7 +33,8 @@ supportForm.addEventListener("submit", async (e) => {
   try {
     await db.collection("reports").add({
       type,
-      email: email || null,
+      email: user.email || null,
+      uid: user.uid,
       message,
       status: "unread",
       createdAt: firebase.firestore.FieldValue.serverTimestamp(),

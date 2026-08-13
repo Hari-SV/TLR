@@ -1,3 +1,5 @@
+
+
 async function loadLeaderboard() {
   const statusEl = document.getElementById("stats-status");
   const table = document.getElementById("stats-table");
@@ -62,7 +64,22 @@ async function loadLeaderboard() {
   }
 }
 
+// Firestore 'in' queries are capped, so resolve usernames in safe chunks.
+async function resolveUsernames(uids) {
+  const usernameByUid = new Map();
+  const chunkSize = 10;
 
+  for (let i = 0; i < uids.length; i += chunkSize) {
+    const chunk = uids.slice(i, i + chunkSize);
+    const snap = await db.collection("usernames").where("uid", "in", chunk).get();
+    snap.forEach((doc) => usernameByUid.set(doc.data().uid, doc.id));
+  }
+
+  return usernameByUid;
+}
+
+// Distinguish the two most likely failure causes so the on-page message
+// actually points at the right fix instead of guessing.
 function describeLeaderboardError(err) {
   const message = err && err.message ? err.message : "";
 
@@ -80,20 +97,6 @@ function describeLeaderboardError(err) {
   }
 
   return "Couldn't load the leaderboard. Check the browser console for the specific error.";
-}
-
-// Firestore 'in' queries are capped, so resolve usernames in safe chunks.
-async function resolveUsernames(uids) {
-  const usernameByUid = new Map();
-  const chunkSize = 10;
-
-  for (let i = 0; i < uids.length; i += chunkSize) {
-    const chunk = uids.slice(i, i + chunkSize);
-    const snap = await db.collection("usernames").where("uid", "in", chunk).get();
-    snap.forEach((doc) => usernameByUid.set(doc.data().uid, doc.id));
-  }
-
-  return usernameByUid;
 }
 
 function formatDuration(totalSeconds) {

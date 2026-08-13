@@ -1,3 +1,5 @@
+
+
 :root {
   --bg: #15110D;
   --panel: #1F1812;
@@ -49,6 +51,8 @@ button:focus-visible {
   outline-offset: 3px;
 }
 
+
+
 .eyebrow {
   font-family: var(--font-display);
   font-size: 0.78rem;
@@ -71,6 +75,7 @@ h1, h2, h3 {
   padding: 0 32px;
   text-align: center;
 }
+
 
 
 .navbar {
@@ -124,6 +129,20 @@ h1, h2, h3 {
   gap: 5px;
 }
 
+.back-link {
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--parchment-dim);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.back-link:hover {
+  color: var(--gold-bright);
+}
+
 .auth-buttons {
   display: flex;
   gap: 12px;
@@ -141,6 +160,7 @@ h1, h2, h3 {
   font-size: 0.85rem;
   color: var(--parchment-dim);
 }
+
 
 .is-hidden,
 [hidden] {
@@ -181,6 +201,7 @@ h1, h2, h3 {
 .btn-solid:hover {
   background: var(--oxblood-bright);
 }
+
 
 
 .hero {
@@ -252,6 +273,7 @@ h1, h2, h3 {
   max-width: 110px;
   text-align: center;
 }
+
 
 
 .divider {
@@ -334,6 +356,7 @@ section {
 }
 
 
+
 .footer {
   border-top: 1px solid var(--border);
   padding: 48px 32px;
@@ -382,6 +405,7 @@ section {
 }
 
 
+
 @media (max-width: 860px) {
   .scroll-list {
     grid-template-columns: 1fr;
@@ -414,6 +438,7 @@ section {
     padding: 64px 24px;
   }
 }
+
 
 
 .modal-overlay {
@@ -543,6 +568,7 @@ section {
 }
 
 
+
 .admin-panel {
   background-color: var(--panel);
   border-top: 1px solid var(--border);
@@ -593,6 +619,18 @@ section {
   border-color: var(--gold);
   color: var(--gold-bright);
   background: rgba(201, 161, 74, 0.08);
+}
+
+.admin-controls-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.admin-controls-right .btn-ghost {
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
 }
 
 .admin-reports-list {

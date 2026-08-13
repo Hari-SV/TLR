@@ -26,8 +26,8 @@
     </div>
     <nav>
       <ul class="nav-links">
-        <li><a href="#about">The Lost Realm</a></li>
-        <li><a href="#how-to-play">How to Play</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="how-to-play.html">How to Play</a></li>
         <li><a href="#account">Account</a></li>
         <li><a href="stats.html">Leaderboard</a></li>
       </ul>
@@ -128,7 +128,7 @@
       <p>
         Sign in to view your hero's progress and manage your profile.
       </p>
-      <button id="account-btn" class="btn-ghost">Go to Account</button>
+      <a href="profile.html" id="account-btn" class="btn-ghost">Go to Account</a>
     </div>
   </section>
 
@@ -137,17 +137,15 @@
     <div class="footer-inner">
       <p class="footer-brand">The Lost Realm</p>
       <ul class="footer-links">
-        <li><a href="#about">The Lost Realm</a></li>
-        <li><a href="#how-to-play">How to Play</a></li>
-        <li><a href="#">Support</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="how-to-play.html">How to Play</a></li>
+        <li><a href="report.html">Support</a></li>
       </ul>
       <p class="footer-copy">&copy; 2026 The Lost Realm. All rights reserved.</p>
     </div>
   </footer>
 
-  <!-- ==============================
-       Admin Panel (hidden until an admin signs in)
-       ============================== -->
+
   <section id="admin-panel" class="admin-panel" hidden>
     <div class="section-inner admin-panel-inner">
       <p class="eyebrow">Admin</p>
@@ -159,7 +157,10 @@
           <button class="filter-pill" data-filter="feedback">Feedback</button>
           <button class="filter-pill" data-filter="unread">Unread</button>
         </div>
-        <button id="admin-logout-btn" class="btn-ghost">Log Out</button>
+        <div class="admin-controls-right">
+          <a href="admin-users.html" class="btn-ghost">User Directory</a>
+          <button id="admin-logout-btn" class="btn-ghost">Log Out</button>
+        </div>
       </div>
       <div id="admin-reports-list" class="admin-reports-list">
         <p class="admin-empty">Loading reports...</p>

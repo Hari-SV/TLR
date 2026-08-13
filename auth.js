@@ -1,7 +1,3 @@
-// ============================================
-// Sign Up
-// ============================================
-
 const signupForm = document.getElementById("signup-form");
 
 if (signupForm) {
@@ -34,7 +30,7 @@ if (signupForm) {
     statusEl.textContent = "Checking username availability...";
 
     try {
-      
+
       const existing = await db.collection("usernames").doc(usernameKey).get();
       if (existing.exists) {
         statusEl.textContent = "That username is already taken.";
@@ -45,13 +41,14 @@ if (signupForm) {
 
       statusEl.textContent = "Creating your account...";
 
-      
+
+      //    password itself -- we never see or persist it ourselves.
       const cred = await auth.createUserWithEmailAndPassword(email, password);
 
-      
+
       await cred.user.updateProfile({ displayName: username });
 
-      
+  
       const batch = db.batch();
       batch.set(db.collection("users").doc(cred.user.uid), {
         username,
@@ -65,7 +62,7 @@ if (signupForm) {
       try {
         await batch.commit();
       } catch (batchErr) {
-        
+
         await cred.user.delete().catch(() => {});
         throw { code: "username/taken" };
       }
@@ -84,6 +81,7 @@ if (signupForm) {
     }
   });
 }
+
 
 
 const loginForm = document.getElementById("login-form");
@@ -114,6 +112,7 @@ if (loginForm) {
     }
   });
 }
+
 
 
 function friendlyAuthError(err) {
