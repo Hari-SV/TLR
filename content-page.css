@@ -32,3 +32,66 @@
   font-style: italic;
   font-size: 0.92rem;
 }
+
+/* ============================================
+   ASL alphabet reference grid
+   ============================================ */
+
+.asl-reference {
+  margin-top: 48px;
+}
+
+.asl-reference h2 {
+  font-size: 1.5rem;
+  color: var(--gold-bright);
+  margin-bottom: 8px;
+}
+
+.asl-reference-sub {
+  color: var(--parchment-dim);
+  font-style: italic;
+  margin-bottom: 28px;
+}
+
+.asl-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+  gap: 14px;
+}
+
+.asl-card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  padding: 14px 10px 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  transition: border-color 0.2s ease;
+}
+
+.asl-card:hover {
+  border-color: var(--gold);
+}
+
+.asl-card img {
+  width: 100%;
+  max-width: 90px;
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: contain;
+}
+
+.asl-card span {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--gold-bright);
+}
+
+@media (max-width: 480px) {
+  .asl-grid {
+    grid-template-columns: repeat(auto-fill, minmax(84px, 1fr));
+  }
+}
