@@ -1,3 +1,7 @@
+/* ============================================
+   Realm of Embers — Dark Medieval Theme
+   ============================================ */
+
 :root {
   --bg: #15110D;
   --panel: #1F1812;
@@ -31,6 +35,7 @@ body {
   line-height: 1.7;
   font-size: 1.05rem;
 
+  /* subtle vignette + grain-like texture using layered gradients */
   background-image:
     radial-gradient(ellipse at top, rgba(201, 161, 74, 0.06), transparent 60%),
     radial-gradient(ellipse at bottom, rgba(0, 0, 0, 0.6), transparent 70%);
@@ -48,7 +53,9 @@ button:focus-visible {
   outline-offset: 3px;
 }
 
-
+/* ============================================
+   Shared
+   ============================================ */
 
 .eyebrow {
   font-family: var(--font-display);
@@ -73,7 +80,9 @@ h1, h2, h3 {
   text-align: center;
 }
 
-
+/* ============================================
+   Navbar
+   ============================================ */
 
 .navbar {
   display: flex;
@@ -94,30 +103,93 @@ h1, h2, h3 {
   font-size: 1.35rem;
   color: var(--gold-bright);
   letter-spacing: 0.06em;
+  white-space: nowrap;
+}
+
+/* Everything besides the brand collapses together as one unit */
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 36px;
 }
 
 .nav-links {
   display: flex;
   list-style: none;
-  gap: 36px;
+  gap: 28px;
 }
 
 .nav-links a {
   text-decoration: none;
   color: var(--parchment);
   font-family: var(--font-display);
-  font-size: 0.82rem;
-  letter-spacing: 0.18em;
+  font-size: 0.8rem;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   font-weight: 500;
   padding-bottom: 6px;
   border-bottom: 1px solid transparent;
+  white-space: nowrap;
   transition: color 0.2s ease, border-color 0.2s ease;
 }
 
 .nav-links a:hover {
   color: var(--gold-bright);
   border-bottom-color: var(--gold);
+}
+
+.auth-buttons {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Admin is a rarely-used, staff-only link -- deliberately understated
+   rather than boxed like the primary Log In / Sign Up actions. */
+.nav-admin-link {
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--parchment-dim);
+  text-decoration: none;
+  white-space: nowrap;
+  padding: 6px 4px;
+  transition: color 0.2s ease;
+}
+
+.nav-admin-link:hover {
+  color: var(--gold-bright);
+}
+
+/* Hamburger toggle -- hidden until the header can no longer fit on one line */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--parchment);
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.nav-toggle[aria-expanded="true"] span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.nav-toggle[aria-expanded="true"] span:nth-child(2) {
+  opacity: 0;
+}
+.nav-toggle[aria-expanded="true"] span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
 }
 
 .brand {
@@ -140,11 +212,6 @@ h1, h2, h3 {
   color: var(--gold-bright);
 }
 
-.auth-buttons {
-  display: flex;
-  gap: 12px;
-}
-
 .session-bar {
   display: flex;
   align-items: center;
@@ -158,7 +225,8 @@ h1, h2, h3 {
   color: var(--parchment-dim);
 }
 
-
+/* Belt-and-suspenders: guarantees an element stays hidden even if
+   something else in the cascade tries to set display on it. */
 .is-hidden,
 [hidden] {
   display: none !important;
@@ -199,7 +267,9 @@ h1, h2, h3 {
   background: var(--oxblood-bright);
 }
 
-
+/* ============================================
+   Hero
+   ============================================ */
 
 .hero {
   padding: 130px 32px 110px;
@@ -271,7 +341,9 @@ h1, h2, h3 {
   text-align: center;
 }
 
-
+/* ============================================
+   Ornamental divider
+   ============================================ */
 
 .divider {
   display: flex;
@@ -295,7 +367,9 @@ h1, h2, h3 {
   opacity: 0.7;
 }
 
-
+/* ============================================
+   Sections
+   ============================================ */
 
 section {
   padding: 90px 32px;
@@ -320,7 +394,7 @@ section {
   font-size: 1.08rem;
 }
 
-
+/* How to Play — scroll list */
 .scroll-list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -375,7 +449,9 @@ section {
   box-shadow: 0 0 24px rgba(201, 161, 74, 0.35);
 }
 
-
+/* ============================================
+   Footer
+   ============================================ */
 
 .footer {
   border-top: 1px solid var(--border);
@@ -424,7 +500,9 @@ section {
   opacity: 0.7;
 }
 
-
+/* ============================================
+   Responsive
+   ============================================ */
 
 @media (max-width: 860px) {
   .scroll-list {
@@ -432,17 +510,53 @@ section {
   }
 }
 
-@media (max-width: 640px) {
-  .navbar {
+/* Collapse the nav into a hamburger menu well before things get tight
+   enough to wrap text inside buttons. */
+@media (max-width: 1100px) {
+  .nav-toggle {
+    display: flex;
+  }
+
+  .nav-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
     flex-direction: column;
-    gap: 16px;
-    padding: 20px;
+    align-items: flex-start;
+    gap: 20px;
+    background-color: var(--bg);
+    border-bottom: 1px solid var(--border);
+    padding: 24px 32px 28px;
+  }
+
+  .nav-menu.is-open {
+    display: flex;
   }
 
   .nav-links {
     flex-direction: column;
-    align-items: center;
+    gap: 16px;
+  }
+
+  .auth-buttons {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
     gap: 14px;
+  }
+
+  .auth-buttons .btn-ghost,
+  .auth-buttons .btn-solid {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 640px) {
+  .navbar {
+    padding: 18px 20px;
   }
 
   .hero {
@@ -459,7 +573,9 @@ section {
   }
 }
 
-
+/* ============================================
+   Modals (Support / Admin Login)
+   ============================================ */
 
 .modal-overlay {
   position: fixed;
@@ -588,6 +704,9 @@ section {
   margin-top: 4px;
 }
 
+/* ============================================
+   Admin Panel
+   ============================================ */
 
 .admin-panel {
   background-color: var(--panel);

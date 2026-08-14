@@ -24,20 +24,28 @@
         <span id="session-label" class="session-label"></span>
       </div>
     </div>
-    <nav>
-      <ul class="nav-links">
-        <li><a href="about.html">About</a></li>
-        <li><a href="how-to-play.html">How to Play</a></li>
-        <li><a href="profile.html">Account</a></li>
-        <li><a href="stats.html">Leaderboard</a></li>
-      </ul>
-    </nav>
-    <div class="auth-buttons">
-      <a href="report.html" id="support-btn" class="btn-ghost">Report / Feedback</a>
-      <button id="session-logout-btn" class="btn-ghost session-logout" hidden>Log Out</button>
-      <a href="login.html" id="login-btn" class="btn-ghost">Log In</a>
-      <a href="signup.html" id="signup-btn" class="btn-solid">Sign Up</a>
-      <a href="admin-login.html" id="admin-login-btn" class="btn-ghost" title="Admin login">Admin</a>
+
+    <button id="nav-toggle" class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <div id="nav-menu" class="nav-menu">
+      <nav>
+        <ul class="nav-links">
+          <li><a href="about.html">About</a></li>
+          <li><a href="how-to-play.html">How to Play</a></li>
+          <li><a href="profile.html">Account</a></li>
+          <li><a href="stats.html">Leaderboard</a></li>
+          <li><a href="report.html">Report / Feedback</a></li>
+        </ul>
+      </nav>
+
+      <div class="auth-buttons">
+        <button id="session-logout-btn" class="btn-ghost session-logout" hidden>Log Out</button>
+        <a href="login.html" id="login-btn" class="btn-ghost">Log In</a>
+        <a href="signup.html" id="signup-btn" class="btn-solid">Sign Up</a>
+        <a href="admin-login.html" id="admin-login-btn" class="nav-admin-link" title="Admin login">Admin</a>
+      </div>
     </div>
   </header>
 
@@ -145,7 +153,9 @@
     </div>
   </footer>
 
- 
+  <!-- ==============================
+       Admin Panel (hidden until an admin signs in)
+       ============================== -->
   <section id="admin-panel" class="admin-panel" hidden>
     <div class="section-inner admin-panel-inner">
       <p class="eyebrow">Admin</p>
