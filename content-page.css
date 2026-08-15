@@ -112,6 +112,13 @@
   margin-top: 48px;
 }
 
+/* Tighter gap when the video sits directly under the page title
+   rather than after a paragraph of text (e.g. How to Play vs About). */
+.content-inner > h1 + .about-video-section {
+  margin-top: 26px;
+  margin-bottom: 40px;
+}
+
 .about-video-section h2 {
   font-size: 1.5rem;
   color: var(--gold-bright);
