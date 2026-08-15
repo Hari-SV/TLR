@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Children's Privacy &amp; Parental Policy — The Lost Realm</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Cinzel+Decorative:wght@700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="content-page.css" />
+
+  <script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-firestore-compat.js"></script>
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="brand">
+      <a href="index.html" class="back-link">&larr; Back to Home</a>
+      <a href="index.html" class="logo">The Lost Realm</a>
+      <div id="session-bar" class="session-bar" hidden>
+        <span id="session-label" class="session-label"></span>
+      </div>
+    </div>
+    <button id="session-logout-btn" class="btn-ghost session-logout" hidden>Log Out</button>
+  </header>
+
+  <main class="content-page">
+    <div class="section-inner content-inner">
+      <p class="eyebrow">The Fine Print</p>
+      <h1>Children's Privacy &amp; Parental Policy</h1>
+      <p class="legal-updated">Last Updated: August 15, 2026</p>
+
+      <div class="legal-body">
+        <p>
+          This Children's Privacy &amp; Parental Policy explains how <strong>Shipped Studio</strong> ("Shipped Studio", "we", "us", or "our") approaches the privacy and safety of children who use our game, website, downloadable software, and related services (collectively, the "Service").
+        </p>
+        <p>
+          This policy is intended to provide parents and legal guardians with clear information about the information collected from children, how the Service uses camera technology, what children can do within the Service, and how parents or guardians can contact us.
+        </p>
+        <p>
+          This policy supplements our <strong>Privacy Policy</strong> and <strong>Terms of Service</strong>. Where applicable, those documents continue to apply to the use of the Service.
+        </p>
+
+        <h2>1. Our Approach to Children's Privacy</h2>
+        <p>Shipped Studio recognizes that children require additional consideration when using online services.</p>
+        <p>Our game is designed to provide a gameplay experience without direct player-to-player communication. Players cannot use the website or game to directly communicate with other players through features such as public chat or private messaging.</p>
+        <p>The game does not intentionally contain explicit sexual content or coarse language.</p>
+        <p>We aim to collect and process only the information reasonably necessary to provide the Service.</p>
+
+        <h2>2. Information We May Collect</h2>
+        <p>When a child creates or uses an account, the Service may collect information such as:</p>
+        <ul>
+          <li>Email address</li>
+          <li>Username or display name</li>
+          <li>Password or authentication information</li>
+          <li>Account creation date</li>
+          <li>Game progress</li>
+          <li>Scores</li>
+          <li>Achievements</li>
+          <li>Leaderboard position</li>
+          <li>Selected gameplay statistics</li>
+        </ul>
+        <p>The Service does not publicly display a player's email address.</p>
+        <p>A child's chosen username or display name and selected gameplay statistics may be visible to other players through the leaderboard.</p>
+        <p>We recommend that parents and guardians encourage children to choose usernames that do not contain their real name, address, school, telephone number, or other identifying information.</p>
+
+        <h2>3. Camera and Hand-Gesture Recognition</h2>
+        <p>The game provides hands-free gameplay using a device's camera.</p>
+        <p>When enabled, the camera is used to recognize hand gestures, including American Sign Language (ASL) and other hand signs, and convert those gestures into gameplay input.</p>
+
+        <h3>Camera processing</h3>
+        <p>Camera input is transmitted to our cloud infrastructure for processing by a machine-learning system.</p>
+        <p>The purpose of this processing is solely to recognize gameplay gestures and provide the corresponding game input.</p>
+        <p>The camera system is <strong>not designed to identify the child using the Service</strong>.</p>
+        <p>We do not use the camera for:</p>
+        <ul>
+          <li>Facial recognition</li>
+          <li>Identifying a child's identity</li>
+          <li>Creating a facial profile</li>
+          <li>Creating a biometric identification profile</li>
+          <li>Advertising</li>
+          <li>Tracking a child across unrelated services</li>
+        </ul>
+
+        <h2>4. Camera Data Retention</h2>
+        <p>Shipped Studio does not intentionally store or retain webcam photographs or video.</p>
+        <p>Camera input is processed for the purpose of recognizing gameplay gestures and is not retained after the processing necessary to provide the gameplay functionality.</p>
+        <p>The camera system is therefore not intended to maintain a historical collection of a child's photographs or video.</p>
+        <p>Parents and guardians should nevertheless be aware that camera data must be transmitted to our cloud processing infrastructure while the camera-based gameplay functionality is being used.</p>
+
+        <h2>5. Disabling Camera Access</h2>
+        <p>Camera functionality is not required for every aspect of the Service.</p>
+        <p>A user can disable the game's camera functionality using the designated in-game hotkey.</p>
+        <p>Camera permissions can also be managed through the user's browser or operating system.</p>
+        <p>Disabling camera access will prevent hands-free, gesture-based gameplay from functioning.</p>
+
+        <h2>6. Player Interaction</h2>
+        <p>The Service does not currently provide direct communication between players.</p>
+        <p>Players cannot use the game's standard features to:</p>
+        <ul>
+          <li>Send private messages to other players</li>
+          <li>Participate in public chat</li>
+          <li>Send direct messages to other players</li>
+          <li>Communicate through an in-game social system</li>
+        </ul>
+        <p>The primary player-to-player feature is the leaderboard, which may display usernames or display names and selected gameplay statistics.</p>
+
+        <h2>7. Leaderboards</h2>
+        <p>The game may provide public leaderboards allowing players to compare their gameplay performance.</p>
+        <p>The leaderboard may display:</p>
+        <ul>
+          <li>Username or display name</li>
+          <li>Score</li>
+          <li>Rank</li>
+          <li>Selected gameplay statistics</li>
+        </ul>
+        <p>A player's email address is not displayed publicly.</p>
+        <p>Parents and guardians should be aware that information placed on a public leaderboard may be visible to other users.</p>
+        <p>We recommend that children avoid selecting usernames containing personal information.</p>
+        <p>Shipped Studio may remove fraudulent or manipulated scores, reset scores, suspend accounts, or remove players from leaderboards where reasonably necessary to maintain the integrity and safety of the Service.</p>
+
+        <h2>8. Parental and Guardian Requests</h2>
+        <p>A parent or legal guardian may contact Shipped Studio regarding a child's account or personal information.</p>
+        <p>Depending on applicable law and the circumstances of the request, a parent or guardian may request information concerning:</p>
+        <ul>
+          <li>The information associated with a child's account</li>
+          <li>How the information is being used</li>
+          <li>Correction of inaccurate account information</li>
+          <li>Deletion of an account</li>
+          <li>Removal of information where legally required</li>
+          <li>Other privacy-related concerns</li>
+        </ul>
+        <p>To protect children's privacy and prevent unauthorized access, Shipped Studio may require reasonable verification that the person making a request is the child's parent or legal guardian.</p>
+
+        <h2>9. Account Deletion</h2>
+        <p>The Service currently does not provide an automated account-deletion function.</p>
+        <p>A parent, guardian, or eligible user may contact Shipped Studio to request deletion of an account.</p>
+        <p>Upon receiving a deletion request, Shipped Studio will review the request and take reasonable steps to process it in accordance with applicable law.</p>
+        <p>Deletion of an account may not necessarily result in the immediate deletion of every historical gameplay statistic. Gameplay statistics may be retained where reasonably necessary for legitimate operational, security, legal, or leaderboard purposes, subject to applicable legal requirements.</p>
+        <p>Where information is no longer required and applicable law requires or permits its deletion, Shipped Studio will take reasonable steps to delete it.</p>
+
+        <h2>10. Parental Concerns About Camera Use</h2>
+        <p>Parents and guardians who are uncomfortable with a child using camera-based gameplay can disable the camera through the game's designated hotkey or through the operating system or browser's camera permissions.</p>
+        <p>The game can continue to be used without camera-based functionality where the particular gameplay feature does not require camera input.</p>
+        <p>Parents and guardians should review the device's camera permissions and the game's settings before allowing a child to use camera-based gameplay.</p>
+
+        <h2>11. Information We Do Not Intentionally Collect Through the Camera</h2>
+        <p>Shipped Studio does not intentionally use the camera system to collect or determine:</p>
+        <ul>
+          <li>A child's identity</li>
+          <li>A child's name</li>
+          <li>A child's age</li>
+          <li>A child's facial identity</li>
+          <li>A child's facial recognition profile</li>
+          <li>A child's biometric identity</li>
+          <li>A child's location</li>
+          <li>A child's personal characteristics for advertising purposes</li>
+        </ul>
+        <p>The camera system exists to recognize gameplay gestures.</p>
+
+        <h2>12. Advertising</h2>
+        <p>The Service is currently provided without advertisements.</p>
+        <p>Shipped Studio does not currently use camera data for advertising purposes.</p>
+        <p>If advertising is introduced in the future, Shipped Studio will review the applicable privacy and children's-data requirements before implementing advertising features.</p>
+
+        <h2>13. Third-Party Infrastructure</h2>
+        <p>Shipped Studio uses third-party infrastructure providers, including <strong>Firebase</strong> and <strong>Google Cloud</strong>, to operate parts of the Service.</p>
+        <p>These services may process information on behalf of Shipped Studio as necessary to provide authentication, cloud infrastructure, gameplay processing, and related functionality.</p>
+        <p>Camera input may be transmitted through Google Cloud infrastructure for real-time machine-learning processing.</p>
+        <p>Shipped Studio does not intentionally store webcam photographs or video after the processing required to provide the gameplay functionality.</p>
+        <p>Parents and guardians should review our main Privacy Policy for additional information about our third-party service providers and data processing.</p>
+
+        <h2>14. Singapore Children's Data Protection</h2>
+        <p>Where applicable, Shipped Studio will comply with Singapore's Personal Data Protection Act 2012 ("PDPA") and relevant guidance issued by the Personal Data Protection Commission ("PDPC") concerning children's personal data.</p>
+        <p>Shipped Studio aims to apply privacy-by-design principles and limit the collection and use of children's personal information to purposes reasonably necessary for operating the Service.</p>
+        <p>We recognize that children's personal data may require additional safeguards and consideration because children may have a reduced ability to understand the potential consequences of providing personal information.</p>
+
+        <h2>15. Parents and Guardians: What We Recommend</h2>
+        <p>Parents and guardians should consider discussing the following with children before they use the Service:</p>
+        <ul>
+          <li>Do not include your real name in your username unless you are comfortable with it being visible on the leaderboard.</li>
+          <li>Do not include your address, school, telephone number, or other personal information in your username.</li>
+          <li>Do not share account passwords with other people.</li>
+          <li>Understand that camera access is required for hands-free gesture-based gameplay.</li>
+          <li>Disable camera access when camera-based gameplay is not being used.</li>
+          <li>Tell a parent or guardian if something about the Service makes you uncomfortable.</li>
+        </ul>
+
+        <h2>16. Reporting a Concern</h2>
+        <p>Parents and guardians who have concerns about:</p>
+        <ul>
+          <li>A child's account</li>
+          <li>Children's privacy</li>
+          <li>Camera processing</li>
+          <li>Personal information</li>
+          <li>Account deletion</li>
+          <li>An inappropriate interaction or behavior</li>
+          <li>A potential security issue</li>
+        </ul>
+        <p>may contact the Shipped Studio development team through the contact information provided on our official website.</p>
+        <p>When contacting us about a child's account, please provide enough information for us to identify the relevant account while avoiding unnecessary disclosure of additional personal information.</p>
+
+        <h2>17. Changes to This Policy</h2>
+        <p>We may update this Children's Privacy &amp; Parental Policy as the Service develops or as applicable privacy laws and regulations change.</p>
+        <p>When we make changes, we will update the "Last Updated" date at the beginning of this policy.</p>
+        <p>If material changes affect how children's personal information is collected or used, we will provide additional notice or obtain any consent required by applicable law.</p>
+
+        <h2>18. Contact</h2>
+        <p>Parents, guardians, and users with questions about children's privacy may contact Shipped Studio through the contact information provided on our official website.</p>
+        <p>We welcome questions and concerns regarding children's privacy and aim to address them responsibly and in accordance with applicable law.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <p class="footer-brand">The Lost Realm</p>
+      <ul class="footer-links">
+        <li><a href="about.html">About</a></li>
+        <li><a href="how-to-play.html">How to Play</a></li>
+        <li><a href="report.html">Support</a></li>
+      </ul>
+      <ul class="footer-legal-links">
+        <li><a href="terms.html">Terms of Service</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="camera-notice.html">Camera &amp; Gesture Recognition Notice</a></li>
+        <li><a href="children-privacy.html">Children's Privacy &amp; Parental Policy</a></li>
+      </ul>
+      <p class="footer-copy">&copy; 2026 The Lost Realm. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="firebase-config.js"></script>
+  <script src="session.js"></script>
+</body>
+</html>
