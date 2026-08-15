@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Terms of Service — The Lost Realm</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Cinzel+Decorative:wght@700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="content-page.css" />
+
+  <script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-firestore-compat.js"></script>
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="brand">
+      <a href="index.html" class="back-link">&larr; Back to Home</a>
+      <a href="index.html" class="logo">The Lost Realm</a>
+      <div id="session-bar" class="session-bar" hidden>
+        <span id="session-label" class="session-label"></span>
+      </div>
+    </div>
+    <button id="session-logout-btn" class="btn-ghost session-logout" hidden>Log Out</button>
+  </header>
+
+  <main class="content-page">
+    <div class="section-inner content-inner">
+      <p class="eyebrow">The Fine Print</p>
+      <h1>Terms of Service</h1>
+      <p class="legal-updated">Last Updated: August 15, 2026</p>
+
+      <div class="legal-body">
+        <p>
+          These Terms of Service ("Terms") govern your access to and use of the game, website, downloadable software, and related services operated by <strong>Shipped Studio</strong> ("Shipped Studio", "we", "us", or "our").
+        </p>
+        <p>
+          By creating an account, downloading the game, accessing the website, or using the Service, you agree to these Terms.
+        </p>
+        <p>
+          If you do not agree with these Terms, you should not use the Service.
+        </p>
+
+        <h2>1. Eligibility and Use of the Service</h2>
+        <p>The Service is provided as a free game and does not currently contain advertisements or paid in-game purchases.</p>
+        <p>You agree to use the Service in accordance with these Terms and all applicable laws and regulations.</p>
+        <p>The Service may be used by children and other minors. Parents and guardians are responsible for determining whether the Service is appropriate for a child in their care.</p>
+
+        <h2>2. User Accounts</h2>
+        <p>Certain features require you to create an account.</p>
+        <p>You agree to:</p>
+        <ul>
+          <li>Provide accurate information when creating your account.</li>
+          <li>Keep your account credentials secure.</li>
+          <li>Not knowingly share your password with other individuals.</li>
+          <li>Not use another person's account without permission.</li>
+          <li>Notify Shipped Studio if you believe your account has been compromised.</li>
+          <li>Be responsible for activity occurring through your account.</li>
+        </ul>
+        <p>You must not use false or misleading information for the purpose of abusing, circumventing, or interfering with the Service.</p>
+
+        <h2>3. Password and Account Security</h2>
+        <p>You are responsible for maintaining the security of your account credentials.</p>
+        <p>You should use a strong and unique password and should not provide your password to other people.</p>
+        <p>Shipped Studio will take reasonable measures to protect account information, but no online service can guarantee absolute security.</p>
+        <p>If you believe that someone has gained unauthorized access to your account, you should contact Shipped Studio as soon as reasonably possible.</p>
+
+        <h2>4. Game Rules</h2>
+        <p>You agree not to:</p>
+        <ul>
+          <li>Cheat or exploit the game to obtain an unfair advantage.</li>
+          <li>Exploit bugs or unintended behavior to obtain higher scores or progress.</li>
+          <li>Manipulate leaderboard scores.</li>
+          <li>Falsify gameplay information.</li>
+          <li>Attack, overload, disrupt, or interfere with our servers or infrastructure.</li>
+          <li>Attempt to gain unauthorized access to the Service.</li>
+          <li>Use automated bots or other automated systems to play the game unless expressly authorized by Shipped Studio.</li>
+          <li>Modify or interfere with the Service in a manner intended to circumvent game mechanics or security systems.</li>
+          <li>Use the bug-report or feedback utilities for abuse, spam, harassment, malicious activity, or purposes unrelated to providing legitimate feedback.</li>
+          <li>Attempt to interfere with another player's use of the Service.</li>
+        </ul>
+        <p>We reserve the right to investigate suspected violations of these rules.</p>
+
+        <h2>5. Bug Reports and Feedback</h2>
+        <p>The Service may provide utilities allowing players to report bugs or submit feedback.</p>
+        <p>These utilities must be used for legitimate purposes.</p>
+        <p>You must not use them to:</p>
+        <ul>
+          <li>Spam Shipped Studio.</li>
+          <li>Harass developers.</li>
+          <li>Submit malicious content.</li>
+          <li>Attempt to exploit backend systems.</li>
+          <li>Submit intentionally fraudulent reports.</li>
+          <li>Interfere with the operation of the Service.</li>
+        </ul>
+
+        <h2>6. Leaderboards</h2>
+        <p>The Service may maintain public leaderboards.</p>
+        <p>Shipped Studio reserves the right to:</p>
+        <ul>
+          <li>Remove fraudulent scores.</li>
+          <li>Remove scores obtained through cheating or exploitation.</li>
+          <li>Reset scores.</li>
+          <li>Correct inaccurate leaderboard information.</li>
+          <li>Suspend accounts.</li>
+          <li>Remove players from leaderboards.</li>
+          <li>Modify or discontinue leaderboard functionality.</li>
+        </ul>
+        <p>Leaderboard rankings are not guaranteed to remain permanently unchanged.</p>
+        <p>Shipped Studio may make reasonable adjustments where necessary to maintain the integrity of the leaderboard.</p>
+
+        <h2>7. Intellectual Property</h2>
+        <p>The Service and its contents are owned by or licensed to <strong>Shipped Studio</strong>.</p>
+        <p>This includes, without limitation:</p>
+        <ul>
+          <li>The game</li>
+          <li>Source code</li>
+          <li>Software</li>
+          <li>Graphics</li>
+          <li>Artwork</li>
+          <li>Logos</li>
+          <li>Trademarks</li>
+          <li>Game content</li>
+          <li>Characters</li>
+          <li>Game systems</li>
+          <li>Original audio</li>
+          <li>Other original materials created for the Service</li>
+        </ul>
+        <p>Except where expressly permitted by these Terms or applicable law, you may not copy, reproduce, redistribute, sell, sublicense, reverse engineer, or commercially exploit Shipped Studio's intellectual property without permission.</p>
+
+        <h2>8. Fan Content and Media</h2>
+        <p>Shipped Studio permits users to create reasonable fan content relating to the game.</p>
+        <p>This may include:</p>
+        <ul>
+          <li>Fan art</li>
+          <li>Gameplay videos</li>
+          <li>Playthroughs</li>
+          <li>Reviews</li>
+          <li>Video edits</li>
+          <li>Screenshots</li>
+          <li>Streams</li>
+          <li>Other transformative or commentary-based media</li>
+        </ul>
+        <p>Creating such content does not transfer ownership of Shipped Studio's intellectual property to the creator.</p>
+        <p>You may not represent fan-created material as official Shipped Studio material or imply that Shipped Studio endorses your content without permission.</p>
+
+        <h2>9. Prohibited Conduct</h2>
+        <p>You must not use the Service to engage in:</p>
+        <ul>
+          <li>Harassment</li>
+          <li>Threats</li>
+          <li>Hateful conduct</li>
+          <li>Malicious disruption</li>
+          <li>Fraud</li>
+          <li>Attempts to compromise the security of the Service</li>
+          <li>Abuse of Shipped Studio's developers or staff</li>
+          <li>Other conduct that materially interferes with the operation of the Service or the experience of other users</li>
+        </ul>
+        <p>Because the Service does not currently provide direct player-to-player communication functionality, users should not attempt to circumvent these limitations to establish unauthorized communication or interaction systems through the Service.</p>
+
+        <h2>10. Suspension and Termination</h2>
+        <p>Shipped Studio may suspend or terminate an account or restrict access to some or all features of the Service where we reasonably believe that a user has:</p>
+        <ul>
+          <li>Cheated or exploited the game.</li>
+          <li>Manipulated scores.</li>
+          <li>Attacked or interfered with our servers.</li>
+          <li>Used automated bots without authorization.</li>
+          <li>Harassed players or developers.</li>
+          <li>Engaged in hateful speech or conduct.</li>
+          <li>Abused the bug-report or feedback systems.</li>
+          <li>Engaged in malicious, disruptive, or fraudulent behavior.</li>
+          <li>Otherwise materially violated these Terms.</li>
+        </ul>
+        <p>Where appropriate, Shipped Studio may also remove associated leaderboard scores or progress.</p>
+        <p>We may also suspend or terminate accounts where necessary to protect the Service, its users, or our infrastructure.</p>
+
+        <h2>11. Changes to the Game</h2>
+        <p>Shipped Studio may modify, update, suspend, or discontinue portions of the Service at any time.</p>
+        <p>This may include:</p>
+        <ul>
+          <li>Game mechanics</li>
+          <li>Levels</li>
+          <li>Characters</li>
+          <li>Leaderboards</li>
+          <li>Features</li>
+          <li>Server infrastructure</li>
+          <li>Authentication systems</li>
+          <li>Gameplay systems</li>
+          <li>Minimum system requirements</li>
+        </ul>
+        <p>We do not guarantee that any particular feature will remain available indefinitely.</p>
+
+        <h2>12. Availability and Service Interruptions</h2>
+        <p>We will make reasonable efforts to keep the Service operational, but we do not guarantee that the Service will always be available.</p>
+        <p>The Service may become temporarily unavailable because of:</p>
+        <ul>
+          <li>Maintenance</li>
+          <li>Updates</li>
+          <li>Server failures</li>
+          <li>Network problems</li>
+          <li>Security incidents</li>
+          <li>Third-party service interruptions</li>
+          <li>Bugs</li>
+          <li>Circumstances beyond our reasonable control</li>
+        </ul>
+        <p>We do not guarantee uninterrupted access to the game or website.</p>
+
+        <h2>13. Game Progress and Data</h2>
+        <p>We make reasonable efforts to preserve player progress and gameplay statistics.</p>
+        <p>However, we do not guarantee that game progress, scores, achievements, leaderboard positions, or other gameplay information will never be lost, corrupted, reset, or altered.</p>
+        <p>Shipped Studio may reset or modify gameplay information where reasonably necessary, including following cheating, technical problems, major game updates, or other circumstances affecting the integrity of the Service.</p>
+
+        <h2>14. Third-Party Services</h2>
+        <p>The Service relies on third-party services, including Firebase and Google Cloud.</p>
+        <p>Interruptions or changes to those services may affect the availability or functionality of the Service.</p>
+        <p>Firebase and Google Cloud are governed by their respective terms and policies.</p>
+
+        <h2>15. Disclaimer</h2>
+        <p>The Service is provided on an "as available" basis.</p>
+        <p>To the maximum extent permitted by applicable law, Shipped Studio does not guarantee that:</p>
+        <ul>
+          <li>The Service will always be available.</li>
+          <li>The Service will be completely free of bugs.</li>
+          <li>Gameplay will always function without interruption.</li>
+          <li>Game progress will never be lost.</li>
+          <li>Leaderboards will always be accurate or available.</li>
+          <li>The Service will be compatible with every device or system.</li>
+          <li>Every feature will remain available indefinitely.</li>
+        </ul>
+        <p>Nothing in these Terms excludes or limits rights or protections that cannot legally be excluded or limited under applicable law.</p>
+
+        <h2>16. Limitation of Liability</h2>
+        <p>To the maximum extent permitted by applicable law, Shipped Studio will not be responsible for losses arising from circumstances outside our reasonable control, including service interruptions, third-party service failures, network failures, or loss of gameplay progress.</p>
+        <p>Nothing in these Terms is intended to exclude liability that cannot legally be excluded under applicable law.</p>
+
+        <h2>17. Changes to These Terms</h2>
+        <p>We may update these Terms from time to time.</p>
+        <p>When we make changes, we will update the "Last Updated" date.</p>
+        <p>Where appropriate, we may provide additional notice of material changes.</p>
+        <p>Your continued use of the Service after updated Terms become effective constitutes acceptance of the revised Terms, to the extent permitted by applicable law.</p>
+
+        <h2>18. Governing Law</h2>
+        <p>These Terms shall be interpreted in accordance with applicable law.</p>
+        <p>Where appropriate, disputes concerning the Service shall be subject to the jurisdiction of the courts of Singapore, subject to any mandatory rights or protections that apply to a user under the law of their jurisdiction.</p>
+
+        <h2>19. Contact</h2>
+        <p>If you have questions concerning these Terms or the Service, you may contact the Shipped Studio development team through the contact information provided on our official website.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <p class="footer-brand">The Lost Realm</p>
+      <ul class="footer-links">
+        <li><a href="about.html">About</a></li>
+        <li><a href="how-to-play.html">How to Play</a></li>
+        <li><a href="report.html">Support</a></li>
+      </ul>
+      <ul class="footer-legal-links">
+        <li><a href="terms.html">Terms of Service</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="camera-notice.html">Camera &amp; Gesture Recognition Notice</a></li>
+      </ul>
+      <p class="footer-copy">&copy; 2026 The Lost Realm. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="firebase-config.js"></script>
+  <script src="session.js"></script>
+</body>
+</html>

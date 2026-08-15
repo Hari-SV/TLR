@@ -474,6 +474,7 @@ section {
 
 .footer-links {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   list-style: none;
   gap: 28px;
@@ -492,6 +493,30 @@ section {
 
 .footer-links a:hover {
   color: var(--gold-bright);
+}
+
+.footer-legal-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style: none;
+  gap: 20px;
+  margin-bottom: 18px;
+}
+
+.footer-legal-links a {
+  text-decoration: none;
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  color: var(--parchment-dim);
+  opacity: 0.75;
+  transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+.footer-legal-links a:hover {
+  color: var(--gold-bright);
+  opacity: 1;
 }
 
 .footer-copy {

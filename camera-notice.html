@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Camera &amp; Gesture Recognition Notice — The Lost Realm</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Cinzel+Decorative:wght@700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="content-page.css" />
+
+  <script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-firestore-compat.js"></script>
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="brand">
+      <a href="index.html" class="back-link">&larr; Back to Home</a>
+      <a href="index.html" class="logo">The Lost Realm</a>
+      <div id="session-bar" class="session-bar" hidden>
+        <span id="session-label" class="session-label"></span>
+      </div>
+    </div>
+    <button id="session-logout-btn" class="btn-ghost session-logout" hidden>Log Out</button>
+  </header>
+
+  <main class="content-page">
+    <div class="section-inner content-inner">
+      <p class="eyebrow">The Fine Print</p>
+      <h1>Camera &amp; Gesture Recognition Notice</h1>
+      <p class="legal-updated">Last Updated: August 15, 2026</p>
+
+      <div class="legal-body">
+        <h2>Why does the game need camera access?</h2>
+        <p>Shipped Studio's game uses your device's camera to provide hands-free gameplay.</p>
+        <p>The camera allows our system to detect hand gestures, including American Sign Language (ASL) and other hand signs, and convert those gestures into gameplay input.</p>
+
+        <h2>What happens to my camera feed?</h2>
+        <p>When camera gameplay is enabled, camera input is transmitted to our cloud-based processing infrastructure, where a machine-learning model analyzes the input and produces gameplay commands.</p>
+
+        <h2>Is my video stored?</h2>
+        <p><strong>No.</strong></p>
+        <p>Shipped Studio does not intentionally store or retain your webcam photographs or video.</p>
+        <p>Camera input is processed for the purpose of providing gameplay functionality and is not retained after the processing necessary to recognize the gameplay input.</p>
+
+        <h2>Does the game identify me?</h2>
+        <p><strong>No.</strong></p>
+        <p>The camera system is not used for facial recognition or personal identification.</p>
+        <p>We do not use the camera to determine who you are.</p>
+
+        <h2>Does the game create a biometric profile?</h2>
+        <p><strong>No.</strong></p>
+        <p>The camera system is designed to recognize gameplay gestures rather than identify individual users.</p>
+        <p>We do not create biometric identification profiles from your camera input.</p>
+
+        <h2>Can I disable the camera?</h2>
+        <p>Yes.</p>
+        <p>You can disable camera functionality at any time using the designated in-game hotkey.</p>
+        <p>You can also manage camera permissions through your browser or operating system.</p>
+        <p>Disabling the camera will prevent hands-free gesture-based gameplay from functioning.</p>
+
+        <h2>Questions</h2>
+        <p>For questions concerning camera processing or privacy, please contact Shipped Studio through the contact information provided on our website.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <p class="footer-brand">The Lost Realm</p>
+      <ul class="footer-links">
+        <li><a href="about.html">About</a></li>
+        <li><a href="how-to-play.html">How to Play</a></li>
+        <li><a href="report.html">Support</a></li>
+      </ul>
+      <ul class="footer-legal-links">
+        <li><a href="terms.html">Terms of Service</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="camera-notice.html">Camera &amp; Gesture Recognition Notice</a></li>
+      </ul>
+      <p class="footer-copy">&copy; 2026 The Lost Realm. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="firebase-config.js"></script>
+  <script src="session.js"></script>
+</body>
+</html>

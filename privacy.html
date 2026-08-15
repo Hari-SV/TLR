@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — The Lost Realm</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Cinzel+Decorative:wght@700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="content-page.css" />
+
+  <script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-firestore-compat.js"></script>
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="brand">
+      <a href="index.html" class="back-link">&larr; Back to Home</a>
+      <a href="index.html" class="logo">The Lost Realm</a>
+      <div id="session-bar" class="session-bar" hidden>
+        <span id="session-label" class="session-label"></span>
+      </div>
+    </div>
+    <button id="session-logout-btn" class="btn-ghost session-logout" hidden>Log Out</button>
+  </header>
+
+  <main class="content-page">
+    <div class="section-inner content-inner">
+      <p class="eyebrow">The Fine Print</p>
+      <h1>Privacy Policy</h1>
+      <p class="legal-updated">Last Updated: August 15, 2026</p>
+
+      <div class="legal-body">
+        <p>
+          This Privacy Policy explains how <strong>Shipped Studio</strong> ("Shipped Studio", "we", "us", or "our") collects, uses, processes, and protects information when you use our game, website, and related services (collectively, the "Service").
+        </p>
+        <p>By creating an account or using the Service, you acknowledge that you have read and understood this Privacy Policy.</p>
+
+        <h2>1. Information We Collect</h2>
+        <p>We collect only information that is reasonably necessary to provide and operate the Service.</p>
+
+        <h3>1.1 Account Information</h3>
+        <p>When you create an account, we may collect:</p>
+        <ul>
+          <li>Email address</li>
+          <li>Username or display name</li>
+          <li>Password information</li>
+          <li>Account creation date</li>
+        </ul>
+        <p>Passwords are intended to be handled using secure authentication mechanisms and should never be stored by Shipped Studio in plaintext.</p>
+        <p>If authentication is provided through Firebase Authentication, authentication information may be processed by Google as part of providing that service.</p>
+
+        <h3>1.2 Gameplay Information</h3>
+        <p>When you use the Service, we may collect information relating to your gameplay, including:</p>
+        <ul>
+          <li>Game progress</li>
+          <li>Scores</li>
+          <li>Leaderboard position</li>
+          <li>Achievements</li>
+          <li>Selected gameplay statistics</li>
+        </ul>
+        <p>This information allows us to save your progress, provide gameplay features, maintain leaderboards, and improve the Service.</p>
+
+        <h3>1.3 Camera and Gesture Information</h3>
+        <p>Our game provides hands-free gameplay using your device's camera.</p>
+        <p>When you enable camera functionality, the camera is used to detect <strong>hand gestures, including American Sign Language (ASL) and other hand signs</strong>, which are interpreted as gameplay input.</p>
+        <p>Camera access is used solely to provide this gameplay functionality.</p>
+        <p>Camera data is transmitted to a cloud server where a machine-learning system processes the input and produces the corresponding gameplay output.</p>
+
+        <h3>1.4 What We Do Not Do With Camera Data</h3>
+        <p>Shipped Studio does <strong>not</strong>:</p>
+        <ul>
+          <li>Store webcam photographs or video</li>
+          <li>Retain webcam footage after processing</li>
+          <li>Use camera footage to identify you</li>
+          <li>Perform facial recognition</li>
+          <li>Create biometric identification profiles</li>
+          <li>Create biometric identifiers for the purpose of identifying you</li>
+          <li>Add webcam footage to a user profile</li>
+          <li>Use webcam footage for advertising</li>
+          <li>Sell webcam footage or camera-derived information</li>
+        </ul>
+        <p>Camera data is processed for the purpose of recognizing gameplay gestures and is not retained by Shipped Studio after the processing required to provide the gameplay functionality.</p>
+
+        <h3>1.5 Camera Permission</h3>
+        <p>Camera access is necessary if you wish to use the hands-free gameplay functionality.</p>
+        <p>You may disable camera functionality at any time using the designated in-game hotkey. You may also manage camera permissions through your operating system or browser.</p>
+        <p>Disabling camera access will prevent the hands-free gameplay functionality from operating, but does not necessarily prevent you from using other portions of the Service.</p>
+
+        <h2>2. How We Use Information</h2>
+        <p>We use information collected through the Service for purposes including:</p>
+        <table>
+          <thead>
+            <tr><th>Information</th><th>Purpose</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Email address</td><td>Account creation, login, account recovery, and account-related communications</td></tr>
+            <tr><td>Username/display name</td><td>Identifying players and displaying leaderboard information</td></tr>
+            <tr><td>Password information</td><td>Secure account authentication</td></tr>
+            <tr><td>Game progress</td><td>Saving and restoring player progression</td></tr>
+            <tr><td>Scores</td><td>Maintaining leaderboards and gameplay statistics</td></tr>
+            <tr><td>Achievements</td><td>Providing gameplay features and tracking player progression</td></tr>
+            <tr><td>Account creation date</td><td>Managing and maintaining accounts</td></tr>
+            <tr><td>Camera input</td><td>Detecting hand gestures and providing hands-free gameplay</td></tr>
+            <tr><td>Analytics information</td><td>Understanding and improving the Service</td></tr>
+          </tbody>
+        </table>
+        <p>We do not use your information for purposes incompatible with those described in this Privacy Policy without providing additional notice where required by applicable law.</p>
+
+        <h2>3. Leaderboards and Public Information</h2>
+        <p>The Service may provide leaderboards that allow players to compare their performance with other players.</p>
+        <p>When you participate in the leaderboard, your:</p>
+        <ul>
+          <li>Username or chosen display name</li>
+          <li>Score</li>
+          <li>Rank</li>
+          <li>Selected gameplay statistics</li>
+        </ul>
+        <p>may be visible to other players.</p>
+        <p>Your email address will <strong>not</strong> be displayed publicly on the leaderboard.</p>
+        <p>You should choose a display name that does not contain personal information you do not want other players to see.</p>
+
+        <h2>4. Third-Party Service Providers</h2>
+        <p>We use third-party infrastructure and service providers to operate the Service.</p>
+        <p>These currently include:</p>
+
+        <h3>Firebase</h3>
+        <p>We use Firebase for services including account authentication and other backend functionality.</p>
+        <p>Firebase may process information such as email addresses, authentication information, IP addresses, device or user-agent information, and other information required by the Firebase services we use.</p>
+        <p>Firebase states that Firebase customers generally control the data they provide to Firebase and that Google generally acts as a processor or service provider for applicable customer data.</p>
+        <p>Firebase services may process or store information on Google's infrastructure and, depending on the service and configuration, processing may occur outside Singapore.</p>
+
+        <h3>Google Cloud Run</h3>
+        <p>We use Google Cloud Run to operate backend services, including services involved in processing gameplay input.</p>
+        <p>Camera input used for gesture recognition may be transmitted to our Cloud Run infrastructure for processing by our machine-learning system.</p>
+        <p>Camera footage is not intentionally stored as part of this process.</p>
+        <p>Google describes Google Cloud as processing customer data according to applicable agreements and instructions, and provides security and data-processing commitments for its cloud services.</p>
+        <p>We may use additional service providers in the future when reasonably necessary to operate, secure, maintain, or improve the Service. Where required, we will update this Privacy Policy accordingly.</p>
+
+        <h2>5. Data Retention</h2>
+        <p>We retain account information while your account remains active or for as long as reasonably necessary to provide the Service and fulfill the purposes described in this Privacy Policy.</p>
+        <p>Gameplay information, including scores, progress, achievements, and leaderboard statistics, may be retained for the operation of the game and its leaderboard systems.</p>
+        <p>Currently, there is no automatic user-facing mechanism to delete individual gameplay statistics.</p>
+        <p>Camera footage is <strong>not retained</strong> by Shipped Studio after the processing necessary to recognize gameplay input.</p>
+        <p>If you would like your account or associated information to be removed, you may contact Shipped Studio using the contact information provided on our website.</p>
+        <p>We will review requests to remove information and will take reasonable steps to comply with applicable legal requirements.</p>
+        <p>Certain information may need to be retained where required by law, necessary for security, dispute resolution, fraud prevention, or other legitimate purposes.</p>
+
+        <h2>6. Account Deletion</h2>
+        <p>At this time, the Service does not provide an automated account-deletion feature.</p>
+        <p>If you would like your account deleted, you may submit a request to the Shipped Studio development team.</p>
+        <p>We will review and process account-deletion requests in accordance with applicable law and our legitimate operational requirements.</p>
+        <p>Deletion of an account may not necessarily result in the immediate deletion of all historical gameplay statistics where those statistics are required for legitimate operational, security, legal, or leaderboard purposes.</p>
+
+        <h2>7. Data Security</h2>
+        <p>We take reasonable technical and organizational measures to protect information against unauthorized access, alteration, disclosure, or destruction.</p>
+        <p>Our infrastructure uses third-party services including Firebase and Google Cloud.</p>
+        <p>Firebase states that its services use security measures including encryption in transit and, for several services, encryption at rest.</p>
+        <p>However, no method of transmission or electronic storage can be guaranteed to be completely secure.</p>
+        <p>Accordingly, we cannot guarantee absolute security of information transmitted to or stored through the Service.</p>
+
+        <h2>8. Children's Privacy</h2>
+        <p>Our Service does not intentionally contain explicit sexual content or coarse language, and players are not provided with direct communication functionality with other players through the website or game.</p>
+        <p>The Service may nevertheless be accessible to children.</p>
+        <p>We aim to apply privacy protections appropriate to younger users and to minimize the information collected to what is reasonably necessary to operate the Service.</p>
+        <p>We do not intentionally use camera functionality to identify children or create biometric identification profiles.</p>
+        <p>Parents or guardians who believe that a child has provided personal information to us or who have questions regarding a child's information may contact Shipped Studio.</p>
+        <p>Singapore's PDPC has specific guidance concerning the processing of children's personal data in digital environments. The guidance emphasizes data protection by design and recognizes that services may fall within its scope where they are likely to be accessed by children, even where they are not specifically designed for children.</p>
+        <p>Where applicable law requires parental consent, age verification, or other safeguards for the processing of children's personal data, we will take reasonable steps to comply with those requirements.</p>
+
+        <h2>9. Your Privacy Rights</h2>
+        <p>Depending on where you live and applicable law, you may have rights concerning your personal information, including rights to:</p>
+        <ul>
+          <li>Request access to personal information we hold about you</li>
+          <li>Request correction of inaccurate information</li>
+          <li>Request deletion of information</li>
+          <li>Withdraw consent where applicable</li>
+          <li>Ask questions about how your information is used</li>
+          <li>Make a complaint regarding our handling of personal information</li>
+        </ul>
+        <p>To make a privacy request, contact Shipped Studio through the contact method provided on our website.</p>
+        <p>We may need to verify your identity before fulfilling certain requests.</p>
+
+        <h2>10. Singapore Personal Data Protection Act</h2>
+        <p>Shipped Studio is committed to handling personal information in accordance with applicable privacy and data-protection requirements, including Singapore's Personal Data Protection Act 2012 ("PDPA") where applicable.</p>
+        <p>We aim to collect, use, and disclose personal information for purposes that are reasonably appropriate and consistent with the purposes described in this Privacy Policy.</p>
+        <p>The PDPC provides organizations with resources and guidance concerning data-protection obligations and privacy notices.</p>
+
+        <h2>11. International Data Processing</h2>
+        <p>Because we use Google and other third-party infrastructure providers, information may be processed or stored in countries outside Singapore.</p>
+        <p>For example, Firebase states that certain Firebase services may process data globally and that Firebase Authentication operates from United States data centers.</p>
+        <p>Where required by applicable law, we will take appropriate measures regarding international transfers of personal information.</p>
+
+        <h2>12. Changes to This Privacy Policy</h2>
+        <p>We may update this Privacy Policy from time to time.</p>
+        <p>When we make changes, we will update the "Last Updated" date at the beginning of this Privacy Policy.</p>
+        <p>Where required by law, we will provide additional notice or obtain consent for material changes.</p>
+
+        <h2>13. Contact Us</h2>
+        <p>If you have questions, concerns, or requests regarding this Privacy Policy or your personal information, please contact the Shipped Studio development team through the contact information provided on our official website.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <p class="footer-brand">The Lost Realm</p>
+      <ul class="footer-links">
+        <li><a href="about.html">About</a></li>
+        <li><a href="how-to-play.html">How to Play</a></li>
+        <li><a href="report.html">Support</a></li>
+      </ul>
+      <ul class="footer-legal-links">
+        <li><a href="terms.html">Terms of Service</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="camera-notice.html">Camera &amp; Gesture Recognition Notice</a></li>
+      </ul>
+      <p class="footer-copy">&copy; 2026 The Lost Realm. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="firebase-config.js"></script>
+  <script src="session.js"></script>
+</body>
+</html>
