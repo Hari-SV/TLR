@@ -179,10 +179,6 @@
 .video-corner-br::before { bottom: 0; right: 0; }
 .video-corner-br::after { bottom: 0; right: 0; }
 
-/* ============================================
-   ASL alphabet reference grid
-   ============================================ */
-
 .asl-reference {
   margin-top: 48px;
 }

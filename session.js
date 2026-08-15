@@ -7,7 +7,7 @@
   const loginBtn = document.getElementById("login-btn");
   const signupBtn = document.getElementById("signup-btn");
 
-  if (!sessionBar) return; // page doesn't have the bar
+  if (!sessionBar) return; 
 
   function setVisible(el, visible) {
     if (!el) return;
@@ -28,8 +28,6 @@
       return;
     }
 
-    // Prefer the stored username from Firestore; fall back to
-    // displayName, then email, while that loads.
     let name = user.displayName || user.email;
     sessionLabel.textContent = `Welcome, ${name}`;
     setVisible(sessionBar, true);
@@ -51,7 +49,6 @@
         sessionLabel.textContent = `Welcome, ${doc.data().username}`;
       }
     } catch (err) {
-      // Non-fatal -- displayName/email fallback above already covers it.
       console.warn("Could not load username:", err);
     }
   });

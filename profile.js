@@ -23,8 +23,6 @@ auth.onAuthStateChanged(async (user) => {
     return;
   }
 
-  // Only check admin status when it actually matters (viewing someone else,
-  // or needing the suspend controls on any profile).
   try {
     const adminDoc = await db.collection("admins").doc(user.uid).get();
     viewerIsAdmin = adminDoc.exists;

@@ -1,7 +1,3 @@
-// ============================================
-// Mobile/tablet nav toggle
-// ============================================
-
 const navToggle = document.getElementById("nav-toggle");
 const navMenu = document.getElementById("nav-menu");
 
@@ -20,17 +16,11 @@ if (navToggle && navMenu) {
   });
 }
 
-// ============================================
-// Existing placeholder buttons
-// ============================================
 
 document.querySelector(".play-btn").addEventListener("click", () => {
   window.location.href = "play.html";
 });
 
-// ============================================
-// Admin Panel
-// ============================================
 
 const adminPanel = document.getElementById("admin-panel");
 const adminLoginBtn = document.getElementById("admin-login-btn");
@@ -39,10 +29,7 @@ document.getElementById("admin-logout-btn").addEventListener("click", () => {
   auth.signOut();
 });
 
-// Watch auth state: if the signed-in user is a verified admin, show the panel.
-// Admin verification/sign-in itself now happens on admin-login.html *before*
-// redirecting here, so this only ever needs to show/hide the panel -- it
-// never needs to sign anyone out.
+
 auth.onAuthStateChanged(async (user) => {
   if (!user) {
     adminPanel.hidden = true;
@@ -54,7 +41,7 @@ auth.onAuthStateChanged(async (user) => {
     const adminDoc = await db.collection("admins").doc(user.uid).get();
     if (adminDoc.exists) {
       adminPanel.hidden = false;
-      adminLoginBtn.hidden = true; // redundant once the panel is showing
+      adminLoginBtn.hidden = true; 
       loadReports();
     } else {
       adminPanel.hidden = true;
@@ -66,9 +53,7 @@ auth.onAuthStateChanged(async (user) => {
   }
 });
 
-// ============================================
-// Admin Panel: load + render + filter reports
-// ============================================
+
 
 let allReports = [];
 let currentFilter = "all";

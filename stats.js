@@ -6,7 +6,7 @@ async function loadLeaderboard() {
   const tbody = document.getElementById("stats-tbody");
 
   try {
-    // Every completed ("victory") session across every player.
+
     const snapshot = await db
       .collectionGroup("gameSessions")
       .where("completed", "==", true)
@@ -17,10 +17,10 @@ async function loadLeaderboard() {
       return;
     }
 
-    // Reduce to each player's single best (lowest) duration.
+
     const bestByUid = new Map();
     snapshot.forEach((doc) => {
-      const uid = doc.ref.parent.parent.id; // users/{uid}/gameSessions/{sessionId}
+      const uid = doc.ref.parent.parent.id; 
       const duration = doc.data().durationSeconds;
       if (!bestByUid.has(uid) || duration < bestByUid.get(uid)) {
         bestByUid.set(uid, duration);
@@ -78,13 +78,11 @@ async function resolveUsernames(uids) {
   return usernameByUid;
 }
 
-// Distinguish the two most likely failure causes so the on-page message
-// actually points at the right fix instead of guessing.
+
 function describeLeaderboardError(err) {
   const message = err && err.message ? err.message : "";
 
-  // Firestore's own error for "this query needs an index that doesn't
-  // exist yet" -- always includes a one-click creation link.
+
   if (err && err.code === "failed-precondition" && /index/i.test(message)) {
     const linkMatch = message.match(/https:\/\/\S+/);
     return linkMatch
